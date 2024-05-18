@@ -1,0 +1,623 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{86C165BC-7A69-4E51-8912-47ACED4497C1}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Client</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>../bin/</OutDir>
+    <LibraryPath>../../Reference/bin/;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>../bin/</OutDir>
+    <LibraryPath>../../Reference/bin/;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>../public/;../default/;../../Reference/Inc/;../public/Imgui/;../bin/ShaderFiles/;../public/PhysX/;../../Reference/Inc/physx/</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4819</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>Engine.lib;..\bin\PhysXDLL\debug\PhysXExtensions_static_64.lib;..\bin\PhysXDLL\debug\PhysX_64.lib;..\bin\PhysXDLL\debug\PhysXPvdSDK_static_64.lib;..\bin\PhysXDLL\debug\PhysXVehicle_static_64.lib;..\bin\PhysXDLL\debug\PhysXCharacterKinematic_static_64.lib;..\bin\PhysXDLL\debug\PhysXCooking_64.lib;..\bin\PhysXDLL\debug\PhysXCommon_64.lib;..\bin\PhysXDLL\debug\SnippetUtils_static_64.lib;..\bin\PhysXDLL\debug\SnippetRender_static_64.lib;..\bin\PhysXDLL\debug\PhysXFoundation_64.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <FxCompile>
+      <ShaderType>Effect</ShaderType>
+    </FxCompile>
+    <FxCompile>
+      <ShaderModel>5.0</ShaderModel>
+    </FxCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>../public/;../default/;../../Reference/Inc/;../public/Imgui/;../bin/ShaderFiles/;../public/PhysX/;../../Reference/Inc/physx/</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4819</DisableSpecificWarnings>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>Engine.lib;..\bin\PhysXDLL\release\PhysXExtensions_static_64.lib;..\bin\PhysXDLL\release\PhysX_64.lib;..\bin\PhysXDLL\release\PhysXPvdSDK_static_64.lib;..\bin\PhysXDLL\release\PhysXVehicle_static_64.lib;..\bin\PhysXDLL\release\PhysXCharacterKinematic_static_64.lib;..\bin\PhysXDLL\release\PhysXCommon_64.lib;..\bin\PhysXDLL\release\PhysXFoundation_64.lib;..\bin\PhysXDLL\release\PhysXCooking_64.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <FxCompile>
+      <ShaderType>Effect</ShaderType>
+    </FxCompile>
+    <FxCompile>
+      <ShaderModel>5.0</ShaderModel>
+    </FxCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Reference\Inc\imconfig.h" />
+    <ClInclude Include="..\..\Reference\Inc\imgui.h" />
+    <ClInclude Include="..\..\Reference\Inc\imgui_impl_dx11.h" />
+    <ClInclude Include="..\..\Reference\Inc\imgui_impl_win32.h" />
+    <ClInclude Include="..\..\Reference\Inc\imgui_internal.h" />
+    <ClInclude Include="..\..\Reference\Inc\imstb_rectpack.h" />
+    <ClInclude Include="..\..\Reference\Inc\imstb_textedit.h" />
+    <ClInclude Include="..\..\Reference\Inc\imstb_truetype.h" />
+    <ClInclude Include="..\bin\ShaderFiles\Shader_Define.hpp" />
+    <ClInclude Include="..\public\AssimpCreateMgr.h" />
+    <ClInclude Include="..\public\BeachBall.h" />
+    <ClInclude Include="..\public\BlockZone.h" />
+    <ClInclude Include="..\public\Boss.h" />
+    <ClInclude Include="..\public\BossCreateTrigger.h" />
+    <ClInclude Include="..\public\C3DUI.h" />
+    <ClInclude Include="..\public\Camera_Editor.h" />
+    <ClInclude Include="..\public\Camera_Main.h" />
+    <ClInclude Include="..\public\ChangeNavIndexTrigger.h" />
+    <ClInclude Include="..\public\Chiedtuan_2Page_Weapon.h" />
+    <ClInclude Include="..\public\CinematicTrigger.h" />
+    <ClInclude Include="..\public\CircusBackground.h" />
+    <ClInclude Include="..\public\CurtainTrigger.h" />
+    <ClInclude Include="..\public\DeadZone.h" />
+    <ClInclude Include="..\public\DemonTreePuzzleTrigger.h" />
+    <ClInclude Include="..\public\Demon_Tree.h" />
+    <ClInclude Include="..\public\DonkeyKong_Bullet.h" />
+    <ClInclude Include="..\public\DonkeyKong_BulletTrigger.h" />
+    <ClInclude Include="..\public\DynamicPlatform.h" />
+    <ClInclude Include="..\public\Elevator.h" />
+    <ClInclude Include="..\public\EndingPortal.h" />
+    <ClInclude Include="..\public\EventTrigger.h" />
+    <ClInclude Include="..\public\FireRing.h" />
+    <ClInclude Include="..\public\GaolCollider.h" />
+    <ClInclude Include="..\public\GoalTrigger.h" />
+    <ClInclude Include="..\public\Goldfish.h" />
+    <ClInclude Include="..\public\GoldfishTrigger.h" />
+    <ClInclude Include="..\public\Golu_Bullet.h" />
+    <ClInclude Include="..\public\Grovetender.h" />
+    <ClInclude Include="..\public\GrovetenderDeadZone.h" />
+    <ClInclude Include="..\public\JumpingMonkey.h" />
+    <ClInclude Include="..\public\KongRajiTrigger.h" />
+    <ClInclude Include="..\public\NonInstanceMeshEffect_TT_Fix.h" />
+    <ClInclude Include="..\public\PlayerIndicator.h" />
+    <ClInclude Include="..\public\SpeechUI.h" />
+    <ClInclude Include="..\public\Vishnu_RollingEye.h" />
+    <ClInclude Include="..\public\MahaHead.h" />
+    <ClInclude Include="..\public\MiniGameBuilding.h" />
+    <ClInclude Include="..\public\FemaleStatue.h" />
+    <ClInclude Include="..\public\FogTrigger.h" />
+    <ClInclude Include="..\public\Gadasura_Rage_Hollogram.h" />
+    <ClInclude Include="..\public\Gear.h" />
+    <ClInclude Include="..\public\GearPuzzleTrigger.h" />
+    <ClInclude Include="..\public\Gear_Puzzle.h" />
+    <ClInclude Include="..\public\Golu.h" />
+    <ClInclude Include="..\public\GraphicUI.h" />
+    <ClInclude Include="..\public\HpUI.h" />
+    <ClInclude Include="..\public\IngameUI.h" />
+    <ClInclude Include="..\public\InstanceEffect.h" />
+    <ClInclude Include="..\public\InstanceMonsterBatchTrigger.h" />
+    <ClInclude Include="..\public\JumpTrigger.h" />
+    <ClInclude Include="..\public\EnvMappedWater.h" />
+    <ClInclude Include="..\public\LilyPad.h" />
+    <ClInclude Include="..\public\Lotus.h" />
+    <ClInclude Include="..\public\Mahabalasura_AttackSpear.h" />
+    <ClInclude Include="..\public\MandalaMesh.h" />
+    <ClInclude Include="..\public\MandalaPuzzle.h" />
+    <ClInclude Include="..\public\MandalaPuzzleTrigger.h" />
+    <ClInclude Include="..\public\MeshEffect.h" />
+    <ClInclude Include="..\public\MiniGame_DonkeyKong.h" />
+    <ClInclude Include="..\public\MiniGame_KongGolu.h" />
+    <ClInclude Include="..\public\MiniGame_KongRaji.h" />
+    <ClInclude Include="..\public\MiniGamePlayerWeapon.h" />
+    <ClInclude Include="..\public\MiniGame_JJB_Player.h" />
+    <ClInclude Include="..\public\MiniGame_KongWeapon.h" />
+    <ClInclude Include="..\public\PM_Food.h" />
+    <ClInclude Include="..\public\PM_Monster.h" />
+    <ClInclude Include="..\public\PackMen.h" />
+    <ClInclude Include="..\public\MiniGame_Golu.h" />
+    <ClInclude Include="..\public\MiniGame_Jino_Monster.h" />
+    <ClInclude Include="..\public\MiniGame_Jino_Player.h" />
+    <ClInclude Include="..\public\Monster_Gadasura_Rage.h" />
+    <ClInclude Include="..\public\Monster_Ninjasura.h" />
+    <ClInclude Include="..\public\Monster_Ninjasura_Minion.h" />
+    <ClInclude Include="..\public\Monster_Spider.h" />
+    <ClInclude Include="..\public\Monster_Tezabsura_Minion.h" />
+    <ClInclude Include="..\public\Monster_Wasp.h" />
+    <ClInclude Include="..\public\Monster_Weapon_Universal.h" />
+    <ClInclude Include="..\public\Monster_Wolf.h" />
+    <ClInclude Include="..\public\Monster_Wormgrub.h" />
+    <ClInclude Include="..\public\Monster_Plat_Bullet.h" />
+    <ClInclude Include="..\public\NormalMonkey.h" />
+    <ClInclude Include="..\public\ParticleCollider.h" />
+    <ClInclude Include="..\public\ParticleCreater.h" />
+    <ClInclude Include="..\public\Particle_ColliderInOut.h" />
+    <ClInclude Include="..\public\PathArrow.h" />
+    <ClInclude Include="..\public\PauseUI.h" />
+    <ClInclude Include="..\public\PillarTrigger.h" />
+    <ClInclude Include="..\public\NonInstanceMeshEffect_TT.h" />
+    <ClInclude Include="..\public\PlayerWeapon_Arrow.h" />
+    <ClInclude Include="..\public\CopyMahabalasura.h" />
+    <ClInclude Include="..\public\Mahabalasura.h" />
+    <ClInclude Include="..\public\Mahabalasura_Arms.h" />
+    <ClInclude Include="..\public\Mahabalasura_AttackArms.h" />
+    <ClInclude Include="..\public\Mahabalasura_Weapon.h" />
+    <ClInclude Include="..\public\PhysX\Collider_PhysX_Base.h" />
+    <ClInclude Include="..\public\PhysX\Collider_PhysX_Dynamic.h" />
+    <ClInclude Include="..\public\PhysX\Collider_PhysX_Joint.h" />
+    <ClInclude Include="..\public\PhysX\Collider_PhysX_Static.h" />
+    <ClInclude Include="..\public\PlayerWeapon_Chakra.h" />
+    <ClInclude Include="..\public\Chiedtian.h" />
+    <ClInclude Include="..\public\Chiedtuan_Weapon.h" />
+    <ClInclude Include="..\public\Client_Define.h" />
+    <ClInclude Include="..\public\Client_Enum.h" />
+    <ClInclude Include="..\public\Client_Macro.h" />
+    <ClInclude Include="..\public\Client_Struct.h" />
+    <ClInclude Include="..\public\EditorTerrain.h" />
+    <ClInclude Include="..\public\ESCursor.h" />
+    <ClInclude Include="..\public\ImguiMgr.h" />
+    <ClInclude Include="..\public\Loader.h" />
+    <ClInclude Include="..\public\MainApp.h" />
+    <ClInclude Include="..\public\MapObject.h" />
+    <ClInclude Include="..\public\Monster.h" />
+    <ClInclude Include="..\public\Monster_Bullet.h" />
+    <ClInclude Include="..\public\MonsterWeapon.h" />
+    <ClInclude Include="..\public\Monster_Bullet_Universal.h" />
+    <ClInclude Include="..\public\Monster_Gadasura_Black.h" />
+    <ClInclude Include="..\public\Monster_Jalsura.h" />
+    <ClInclude Include="..\public\Monster_Mahinasura_Leader.h" />
+    <ClInclude Include="..\public\Monster_Mahinasura_Minion.h" />
+    <ClInclude Include="..\public\Monster_Texture_Bullet.h" />
+    <ClInclude Include="..\public\Monster_Tezabsura_Bomber.h" />
+    <ClInclude Include="..\public\Monster_Tezabsura_Landmine.h" />
+    <ClInclude Include="..\public\Monster_Tezabsura_Purple.h" />
+    <ClInclude Include="..\public\Monster_Vayusura_Leader.h" />
+    <ClInclude Include="..\public\Monster_Vayusura_Minion.h" />
+    <ClInclude Include="..\public\PhysX\PhysXMgr.h" />
+    <ClInclude Include="..\public\PhysX\PhyxSampleTest.h" />
+    <ClInclude Include="..\public\Player.h" />
+    <ClInclude Include="..\public\PlayerWeapon.h" />
+    <ClInclude Include="..\public\PlayerWeapon_Bow.h" />
+    <ClInclude Include="..\public\PlayerWeapon_Shield.h" />
+    <ClInclude Include="..\public\PlayerWeapon_Spear.h" />
+    <ClInclude Include="..\public\PlayerWeapon_Sword.h" />
+    <ClInclude Include="..\public\HitEffectUI.h" />
+    <ClInclude Include="..\public\RadialBlurUI.h" />
+    <ClInclude Include="..\public\Rajibalsura.h" />
+    <ClInclude Include="..\public\RajiHand.h" />
+    <ClInclude Include="..\public\RajiMask.h" />
+    <ClInclude Include="..\public\Rangda.h" />
+    <ClInclude Include="..\public\Randa_Wasp_Bullet.h" />
+    <ClInclude Include="..\public\Rangda_Statue.h" />
+    <ClInclude Include="..\public\Rangda_Finger.h" />
+    <ClInclude Include="..\public\Rangda_MagicCircle.h" />
+    <ClInclude Include="..\public\RepelWall.h" />
+    <ClInclude Include="..\public\ResurrectionTrigger.h" />
+    <ClInclude Include="..\public\Rope.h" />
+    <ClInclude Include="..\public\SceneChangeTrigger.h" />
+    <ClInclude Include="..\public\Scene_Edit.h" />
+    <ClInclude Include="..\public\NaviPoint.h" />
+    <ClInclude Include="..\public\Scene_Loading.h" />
+    <ClInclude Include="..\public\Scene_Loby.h" />
+    <ClInclude Include="..\public\Scene_MiniGame_DonkeyKong.h" />
+    <ClInclude Include="..\public\Scene_MiniGame_JJB.h" />
+    <ClInclude Include="..\public\Scene_Minigame_PM.h" />
+    <ClInclude Include="..\public\Scene_Minigame1.h" />
+    <ClInclude Include="..\public\Scene_MiniGame_Jino.h" />
+    <ClInclude Include="..\public\Scene_Stage1.h" />
+    <ClInclude Include="..\public\Scene_Stage2.h" />
+    <ClInclude Include="..\public\Scene_Boss.h" />
+    <ClInclude Include="..\public\Scene_StageSelect.h" />
+    <ClInclude Include="..\public\Scene_Stage7.h" />
+    <ClInclude Include="..\public\Scene_Stage6.h" />
+    <ClInclude Include="..\public\Scene_Stage5.h" />
+    <ClInclude Include="..\public\Scene_Stage4.h" />
+    <ClInclude Include="..\public\Scene_Stage3.h" />
+    <ClInclude Include="..\public\ShellingArrow.h" />
+    <ClInclude Include="..\public\ShellingSkillAttackPoint.h" />
+    <ClInclude Include="..\public\ShellingSkillRange.h" />
+    <ClInclude Include="..\public\LobbyUI.h" />
+    <ClInclude Include="..\public\SkillUI.h" />
+    <ClInclude Include="..\public\SkyBox.h" />
+    <ClInclude Include="..\public\Snake.h" />
+    <ClInclude Include="..\public\NonInstanceMeshEffect.h" />
+    <ClInclude Include="..\public\Mahabalasura_SpearWave.h" />
+    <ClInclude Include="..\public\Snake_Poison_Raser.h" />
+    <ClInclude Include="..\public\SoundUI.h" />
+    <ClInclude Include="..\public\SpearWave.h" />
+    <ClInclude Include="..\public\StaticInstanceMapObject.h" />
+    <ClInclude Include="..\public\TaikoUI.h" />
+    <ClInclude Include="..\public\Taiko_Monster.h" />
+    <ClInclude Include="..\public\TestLedgeTrigger.h" />
+    <ClInclude Include="..\public\TestNonAnimInstancing.h" />
+    <ClInclude Include="..\public\StaticMapObject.h" />
+    <ClInclude Include="..\public\TestObject.h" />
+    <ClInclude Include="..\public\TestObject_BaseCollider.h" />
+    <ClInclude Include="..\public\TestStaticObject.h" />
+    <ClInclude Include="..\public\TestObject_PhysX.h" />
+    <ClInclude Include="..\public\TreeMesh.h" />
+    <ClInclude Include="..\public\MonsterBatchTrigger.h" />
+    <ClInclude Include="..\public\TriggerObject.h" />
+    <ClInclude Include="..\public\Trigger_ChangeCameraView.h" />
+    <ClInclude Include="..\public\UI.h" />
+    <ClInclude Include="..\public\PartilceCreateMgr.h" />
+    <ClInclude Include="..\public\UI_Texture_Universal.h" />
+    <ClInclude Include="..\public\UtilityMgr.h" />
+    <ClInclude Include="..\public\Volcano.h" />
+    <ClInclude Include="..\public\WallRunTrigger.h" />
+    <ClInclude Include="..\public\WorldTexture_Universal.h" />
+    <ClInclude Include="CflameTerrain.h" />
+    <ClInclude Include="Client.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="Scene_Laboratory_Jino.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\private\AssimpCreateMgr.cpp" />
+    <ClCompile Include="..\private\BeachBall.cpp" />
+    <ClCompile Include="..\private\BlockZone.cpp" />
+    <ClCompile Include="..\private\Boss.cpp" />
+    <ClCompile Include="..\private\BossCreateTrigger.cpp" />
+    <ClCompile Include="..\private\C3DUI.cpp" />
+    <ClCompile Include="..\private\Camera_Main.cpp" />
+    <ClCompile Include="..\private\ChangeNavIndexTrigger.cpp" />
+    <ClCompile Include="..\private\Chiedtuan_2Page_Weapon.cpp" />
+    <ClCompile Include="..\private\CinematicTrigger.cpp" />
+    <ClCompile Include="..\private\CircusBackground.cpp" />
+    <ClCompile Include="..\private\CurtainTrigger.cpp" />
+    <ClCompile Include="..\private\DeadZone.cpp" />
+    <ClCompile Include="..\private\DemonTreePuzzleTrigger.cpp" />
+    <ClCompile Include="..\private\Demon_Tree.cpp" />
+    <ClCompile Include="..\private\DonkeyKong_Bullet.cpp" />
+    <ClCompile Include="..\private\DonkeyKong_BulletTrigger.cpp" />
+    <ClCompile Include="..\private\DynamicPlatform.cpp" />
+    <ClCompile Include="..\private\Elevator.cpp" />
+    <ClCompile Include="..\private\EndingPortal.cpp" />
+    <ClCompile Include="..\private\EventTrigger.cpp" />
+    <ClCompile Include="..\private\FireRing.cpp" />
+    <ClCompile Include="..\private\GaolCollider.cpp" />
+    <ClCompile Include="..\private\GoalTrigger.cpp" />
+    <ClCompile Include="..\private\Goldfish.cpp" />
+    <ClCompile Include="..\private\GoldfishTrigger.cpp" />
+    <ClCompile Include="..\private\Golu_Bullet.cpp" />
+    <ClCompile Include="..\private\Grovetender.cpp" />
+    <ClCompile Include="..\private\GrovetenderDeadZone.cpp" />
+    <ClCompile Include="..\private\JumpingMonkey.cpp" />
+    <ClCompile Include="..\private\KongRajiTrigger.cpp" />
+    <ClCompile Include="..\private\NonInstanceMeshEffect_TT_Fix.cpp" />
+    <ClCompile Include="..\private\PlayerIndicator.cpp" />
+    <ClCompile Include="..\private\SpeechUI.cpp" />
+    <ClCompile Include="..\private\Vishnu_RollingEye.cpp" />
+    <ClCompile Include="..\private\MahaHead.cpp" />
+    <ClCompile Include="..\private\MiniGameBuilding.cpp" />
+    <ClCompile Include="..\private\FemaleStatue.cpp" />
+    <ClCompile Include="..\private\FogTrigger.cpp" />
+    <ClCompile Include="..\private\Gear.cpp" />
+    <ClCompile Include="..\private\GearPuzzleTrigger.cpp" />
+    <ClCompile Include="..\private\Gear_Puzzle.cpp" />
+    <ClCompile Include="..\private\Golu.cpp" />
+    <ClCompile Include="..\private\GraphicUI.cpp" />
+    <ClCompile Include="..\private\HpUI.cpp" />
+    <ClCompile Include="..\private\IngameUI.cpp" />
+    <ClCompile Include="..\private\InstanceMonsterBatchTrigger.cpp" />
+    <ClCompile Include="..\private\JumpTrigger.cpp" />
+    <ClCompile Include="..\private\EnvMappedWater.cpp" />
+    <ClCompile Include="..\private\LilyPad.cpp" />
+    <ClCompile Include="..\private\Lotus.cpp" />
+    <ClCompile Include="..\private\Mahabalasura_AttackSpear.cpp" />
+    <ClCompile Include="..\private\MandalaMesh.cpp" />
+    <ClCompile Include="..\private\MandalaPuzzle.cpp" />
+    <ClCompile Include="..\private\MandalaPuzzleTrigger.cpp" />
+    <ClCompile Include="..\private\MiniGame_DonkeyKong.cpp" />
+    <ClCompile Include="..\private\MiniGame_KongGolu.cpp" />
+    <ClCompile Include="..\private\MiniGame_KongRaji.cpp" />
+    <ClCompile Include="..\private\MiniGamePlayerWeapon.cpp" />
+    <ClCompile Include="..\private\MiniGame_JJB_Player.cpp" />
+    <ClCompile Include="..\private\MiniGame_KongWeapon.cpp" />
+    <ClCompile Include="..\private\PM_Food.cpp" />
+    <ClCompile Include="..\private\PM_Monster.cpp" />
+    <ClCompile Include="..\private\PackMen.cpp" />
+    <ClCompile Include="..\private\MiniGame_Golu.cpp" />
+    <ClCompile Include="..\private\MiniGame_Jino_Monster.cpp" />
+    <ClCompile Include="..\private\MiniGame_Jino_Player.cpp" />
+    <ClCompile Include="..\private\Monster_Bullet_Universal.cpp" />
+    <ClCompile Include="..\private\Gadasura_Rage_Hollogram.cpp" />
+    <ClCompile Include="..\private\InstanceEffect.cpp" />
+    <ClCompile Include="..\private\MeshEffect.cpp" />
+    <ClCompile Include="..\private\Monster_Gadasura_Rage.cpp" />
+    <ClCompile Include="..\private\Monster_Ninjasura.cpp" />
+    <ClCompile Include="..\private\Monster_Ninjasura_Minion.cpp" />
+    <ClCompile Include="..\private\Monster_Spider.cpp" />
+    <ClCompile Include="..\private\Monster_Tezabsura_Minion.cpp" />
+    <ClCompile Include="..\private\Monster_Wasp.cpp" />
+    <ClCompile Include="..\private\Monster_Weapon_Universal.cpp" />
+    <ClCompile Include="..\private\Monster_Wolf.cpp" />
+    <ClCompile Include="..\private\Monster_Wormgrub.cpp" />
+    <ClCompile Include="..\private\Monster_Plat_Bullet.cpp" />
+    <ClCompile Include="..\private\NormalMonkey.cpp" />
+    <ClCompile Include="..\private\ParticleCollider.cpp" />
+    <ClCompile Include="..\private\ParticleCreater.cpp" />
+    <ClCompile Include="..\private\Particle_ColliderInOut.cpp" />
+    <ClCompile Include="..\private\PathArrow.cpp" />
+    <ClCompile Include="..\private\PauseUI.cpp" />
+    <ClCompile Include="..\private\PillarTrigger.cpp" />
+    <ClCompile Include="..\private\NonInstanceMeshEffect_TT.cpp" />
+    <ClCompile Include="..\private\PlayerWeapon_Arrow.cpp" />
+    <ClCompile Include="..\private\CopyMahabalasura.cpp" />
+    <ClCompile Include="..\private\Mahabalasura.cpp" />
+    <ClCompile Include="..\private\Mahabalasura_Arms.cpp" />
+    <ClCompile Include="..\private\Mahabalasura_AttackArms.cpp" />
+    <ClCompile Include="..\private\Mahabalasura_Weapon.cpp" />
+    <ClCompile Include="..\private\physX\Collider_PhysX_Base.cpp" />
+    <ClCompile Include="..\private\physX\Collider_PhysX_Dynamic.cpp" />
+    <ClCompile Include="..\private\physX\Collider_PhysX_Joint.cpp" />
+    <ClCompile Include="..\private\physX\Collider_PhysX_Static.cpp" />
+    <ClCompile Include="..\private\PlayerWeapon_Chakra.cpp" />
+    <ClCompile Include="..\private\Chiedtian.cpp" />
+    <ClCompile Include="..\private\Chiedtuan_Weapon.cpp" />
+    <ClCompile Include="..\private\EditorTerrain.cpp" />
+    <ClCompile Include="..\private\ESCursor.cpp" />
+    <ClCompile Include="..\private\ImguiMgr.cpp" />
+    <ClCompile Include="..\private\Loader.cpp" />
+    <ClCompile Include="..\private\MapObject.cpp" />
+    <ClCompile Include="..\private\Monster.cpp" />
+    <ClCompile Include="..\private\Monster_Bullet.cpp" />
+    <ClCompile Include="..\private\MonsterWeapon.cpp" />
+    <ClCompile Include="..\private\Monster_Gadasura_Black.cpp" />
+    <ClCompile Include="..\private\Monster_Jalsura.cpp" />
+    <ClCompile Include="..\private\Monster_Mahinasura_Leader.cpp" />
+    <ClCompile Include="..\private\Monster_Mahinasura_Minion.cpp" />
+    <ClCompile Include="..\private\Monster_Texture_Bullet.cpp" />
+    <ClCompile Include="..\private\Monster_Tezabsura_Bomber.cpp" />
+    <ClCompile Include="..\private\Monster_Tezabsura_Landmine.cpp" />
+    <ClCompile Include="..\private\Monster_Tezabsura_Purple.cpp" />
+    <ClCompile Include="..\private\Monster_Vayusura_Leader.cpp" />
+    <ClCompile Include="..\private\Monster_Vayusura_Minion.cpp" />
+    <ClCompile Include="..\private\physX\PhysXMgr.cpp" />
+    <ClCompile Include="..\private\physX\PhyxSampleTest.cpp" />
+    <ClCompile Include="..\private\Player.cpp" />
+    <ClCompile Include="..\private\PlayerWeapon.cpp" />
+    <ClCompile Include="..\private\PlayerWeapon_Bow.cpp" />
+    <ClCompile Include="..\private\PlayerWeapon_Shield.cpp" />
+    <ClCompile Include="..\private\PlayerWeapon_Spear.cpp" />
+    <ClCompile Include="..\private\PlayerWeapon_Sword.cpp" />
+    <ClCompile Include="..\private\HitEffectUI.cpp" />
+    <ClCompile Include="..\private\RadialBlurUI.cpp" />
+    <ClCompile Include="..\private\Rajibalsura.cpp" />
+    <ClCompile Include="..\private\RajiHand.cpp" />
+    <ClCompile Include="..\private\RajiMask.cpp" />
+    <ClCompile Include="..\private\Rangda.cpp" />
+    <ClCompile Include="..\private\Randa_Wasp_Bullet.cpp" />
+    <ClCompile Include="..\private\Rangda_Statue.cpp" />
+    <ClCompile Include="..\private\Rangda_Finger.cpp" />
+    <ClCompile Include="..\private\Rangda_MagicCircle.cpp" />
+    <ClCompile Include="..\private\RepelWall.cpp" />
+    <ClCompile Include="..\private\ResurrectionTrigger.cpp" />
+    <ClCompile Include="..\private\Rope.cpp" />
+    <ClCompile Include="..\private\SceneChangeTrigger.cpp" />
+    <ClCompile Include="..\private\Scene_Edit.cpp" />
+    <ClCompile Include="..\private\Scene_MiniGame_DonkeyKong.cpp" />
+    <ClCompile Include="..\private\Scene_MiniGame_JJB.cpp" />
+    <ClCompile Include="..\private\Scene_Minigame_PM.cpp" />
+    <ClCompile Include="..\private\Scene_Minigame1.cpp" />
+    <ClCompile Include="..\private\Scene_MiniGame_Jino.cpp" />
+    <ClCompile Include="..\private\ShellingArrow.cpp" />
+    <ClCompile Include="..\private\ShellingSkillAttackPoint.cpp" />
+    <ClCompile Include="..\private\ShellingSkillRange.cpp" />
+    <ClCompile Include="..\private\LobbyUI.cpp" />
+    <ClCompile Include="..\private\SkillUI.cpp" />
+    <ClCompile Include="..\private\SkyBox.cpp" />
+    <ClCompile Include="..\private\Snake.cpp" />
+    <ClCompile Include="..\private\NonInstanceMeshEffect.cpp" />
+    <ClCompile Include="..\private\Mahabalasura_SpearWave.cpp" />
+    <ClCompile Include="..\private\Snake_Poison_Raser.cpp" />
+    <ClCompile Include="..\private\SoundUI.cpp" />
+    <ClCompile Include="..\private\SpearWave.cpp" />
+    <ClCompile Include="..\private\StaticInstanceMapObject.cpp" />
+    <ClCompile Include="..\private\TaikoUI.cpp" />
+    <ClCompile Include="..\private\Taiko_Monster.cpp" />
+    <ClCompile Include="..\private\TestLedgeTrigger.cpp" />
+    <ClCompile Include="..\private\TestNonAnimInstancing.cpp" />
+    <ClCompile Include="..\private\StaticMapObject.cpp" />
+    <ClCompile Include="..\private\NaviPoint.cpp" />
+    <ClCompile Include="..\private\TestObject_BaseCollider.cpp" />
+    <ClCompile Include="..\private\TestObject_PhysX.cpp" />
+    <ClCompile Include="..\private\TestObject.cpp" />
+    <ClCompile Include="..\private\MainApp.cpp" />
+    <ClCompile Include="..\private\Scene_Loading.cpp" />
+    <ClCompile Include="..\private\Scene_Loby.cpp" />
+    <ClCompile Include="..\private\Scene_Stage1.cpp" />
+    <ClCompile Include="..\private\Scene_Stage2.cpp" />
+    <ClCompile Include="..\private\Scene_Boss.cpp" />
+    <ClCompile Include="..\private\Scene_StageSelect.cpp" />
+    <ClCompile Include="..\private\Scene_Stage7.cpp" />
+    <ClCompile Include="..\private\Scene_Stage6.cpp" />
+    <ClCompile Include="..\private\Scene_Stage5.cpp" />
+    <ClCompile Include="..\private\Scene_Stage4.cpp" />
+    <ClCompile Include="..\private\Scene_Stage3.cpp" />
+    <ClCompile Include="..\private\TestStaticObject.cpp" />
+    <ClCompile Include="..\private\TreeMesh.cpp" />
+    <ClCompile Include="..\private\MonsterBatchTrigger.cpp" />
+    <ClCompile Include="..\private\TriggerObject.cpp" />
+    <ClCompile Include="..\private\Trigger_ChangeCameraView.cpp" />
+    <ClCompile Include="..\private\UI.cpp" />
+    <ClCompile Include="..\private\PartilceCreateMgr.cpp" />
+    <ClCompile Include="..\private\UI_Texture_Universal.cpp" />
+    <ClCompile Include="..\private\UtilityMgr.cpp" />
+    <ClCompile Include="..\private\Volcano.cpp" />
+    <ClCompile Include="..\private\WallRunTrigger.cpp" />
+    <ClCompile Include="..\private\WorldTexture_Universal.cpp" />
+    <ClCompile Include="..\public\Camera_Editor.cpp" />
+    <ClCompile Include="..\public\Imgui\imgui.cpp" />
+    <ClCompile Include="..\public\Imgui\imgui_demo.cpp" />
+    <ClCompile Include="..\public\Imgui\imgui_draw.cpp" />
+    <ClCompile Include="..\public\Imgui\imgui_impl_dx11.cpp" />
+    <ClCompile Include="..\public\Imgui\imgui_impl_win32.cpp" />
+    <ClCompile Include="..\public\Imgui\imgui_tables.cpp" />
+    <ClCompile Include="..\public\Imgui\imgui_widgets.cpp" />
+    <ClCompile Include="CflameTerrain.cpp" />
+    <ClCompile Include="Client.cpp" />
+    <ClCompile Include="Scene_Laboratory_Jino.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Client.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Client.ico" />
+    <Image Include="small.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="..\bin\ShaderFiles\Shader_AnimModel.hlsl" />
+    <FxCompile Include="..\bin\ShaderFiles\Shader_NonAnimModel.hlsl" />
+    <FxCompile Include="..\bin\ShaderFiles\Shader_VtxAnimMeshInstance.hlsl" />
+    <FxCompile Include="..\bin\ShaderFiles\Shader_VtxCubeTex.hlsl" />
+    <FxCompile Include="..\bin\ShaderFiles\Shader_VtxNonAnimMeshInstance.hlsl" />
+    <FxCompile Include="..\bin\ShaderFiles\Shader_VtxNorTex.hlsl" />
+    <FxCompile Include="..\bin\ShaderFiles\Shader_VtxPointInstance.hlsl" />
+    <FxCompile Include="..\bin\ShaderFiles\Shader_VtxTex.hlsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Natvis Include="..\public\Imgui\imgui.natvis" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
